@@ -5,26 +5,37 @@ export function ContactPage() {
   const [form, setForm] = useState({
     nom: "",
     prenom: "",
+    email: "",
     telephone: "",
     typeEvenement: "",
     message: "",
   });
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [submissionMessage, setSubmissionMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const submissionStatus = InfobipSubmitForm(form.nom, form.prenom, form.telephone.substring(1, form.telephone.length), form.typeEvenement, form.message);  ;
+    const submissionStatus = InfobipSubmitForm(form.nom, form.prenom, form.email, form.telephone.substring(1, form.telephone.length), form.typeEvenement, form.message);
 
-    if (submissionStatus?.success === false) {
-      setShowErrorMessage(true);
-      setSubmissionMessage(submissionStatus?.error || "");
-    } else {
-      setShowSuccessMessage(true);
-      setSubmissionMessage("Votre message a été envoyé avec succès ! Nous vous contacterons bientôt.");
-    }
+    submissionStatus.then((response) => {
+      if (response.operationId) {
+        setShowSuccessMessage(true);
+        setSubmissionMessage("Votre demande a bien été envoyée.");
+        setForm({
+          nom: "",
+          prenom: "",
+          email: "",
+          telephone: "",
+          typeEvenement: "",
+          message: "",
+        });
+      } else {
+        setShowSuccessMessage(false);
+        setSubmissionMessage("Une erreur est survenue lors de l'envoi du formulaire. Veuillez réessayer.");
+      }
+    });
+
   };
 
   return (
@@ -84,6 +95,24 @@ export function ContactPage() {
                   className="w-full bg-transparent border-b border-[#1A1410]/20 pb-2 text-[#1A1410] placeholder-[#1A1410]/25 focus:outline-none focus:border-[#1A1410]/60 transition-colors"
                   style={{ fontFamily: 'Jost', fontWeight: 300, fontSize: '1rem' }}
                   placeholder="Votre prénom"
+                />
+              </div>
+
+              {/* Email */}
+              <div className="py-6 border-b border-[#1A1410]/12">
+                <label
+                  className="block text-[#1A1410]/40 text-xs tracking-[0.15em] mb-3"
+                  style={{ fontFamily: 'Jost' }}
+                >
+                  Email
+                </label>
+                <input
+                  required
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  className="w-full bg-transparent border-b border-[#1A1410]/20 pb-2 text-[#1A1410] placeholder-[#1A1410]/25 focus:outline-none focus:border-[#1A1410]/60 transition-colors"
+                  style={{ fontFamily: 'Jost', fontWeight: 300, fontSize: '1rem' }}
+                  placeholder="Votre email"
                 />
               </div>
 
