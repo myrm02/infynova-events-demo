@@ -7,7 +7,7 @@ export default async function InfobipSubmitForm (name: string, prenom: string, e
   let result : FormSubmitResponse;
 
   const url =
-  "https://api2.infobip.com/moments/1/flows/200000038011957/participants";
+  "https://api2.infobip.com/moments/1/flows/200000039044394/participants";
 
   const res = await fetch(url, {
     method: 'POST',
