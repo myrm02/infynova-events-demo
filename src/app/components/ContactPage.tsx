@@ -21,7 +21,7 @@ export function ContactPage() {
     submissionStatus.then((response) => {
       if (response.operationId) {
         setShowSuccessMessage(true);
-        setSubmissionMessage("Votre demande a bien été envoyée.");
+        setSubmissionMessage("Your request has been sent successfully");
         setForm({
           nom: "",
           prenom: "",
@@ -32,7 +32,7 @@ export function ContactPage() {
         });
       } else {
         setShowSuccessMessage(false);
-        setSubmissionMessage("Une erreur est survenue lors de l'envoi du formulaire. Veuillez réessayer.");
+        setSubmissionMessage("An error occurred while sending the form. Please try again.");
       }
     });
 
