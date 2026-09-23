@@ -68,7 +68,7 @@ export function ContactPage() {
                   className="block text-[#1A1410]/40 text-xs tracking-[0.15em] mb-3"
                   style={{ fontFamily: 'Jost' }}
                 >
-                  Nom
+                  Firstname
                 </label>
                 <input
                   required
@@ -76,7 +76,7 @@ export function ContactPage() {
                   onChange={(e) => setForm({ ...form, nom: e.target.value })}
                   className="w-full bg-transparent border-b border-[#1A1410]/20 pb-2 text-[#1A1410] placeholder-[#1A1410]/25 focus:outline-none focus:border-[#1A1410]/60 transition-colors"
                   style={{ fontFamily: 'Jost', fontWeight: 300, fontSize: '1rem' }}
-                  placeholder="Votre nom"
+                  placeholder="Your firstname"
                 />
               </div>
 
@@ -86,7 +86,7 @@ export function ContactPage() {
                   className="block text-[#1A1410]/40 text-xs tracking-[0.15em] mb-3"
                   style={{ fontFamily: 'Jost' }}
                 >
-                  Prénom
+                  Lastname
                 </label>
                 <input
                   required
@@ -94,7 +94,7 @@ export function ContactPage() {
                   onChange={(e) => setForm({ ...form, prenom: e.target.value })}
                   className="w-full bg-transparent border-b border-[#1A1410]/20 pb-2 text-[#1A1410] placeholder-[#1A1410]/25 focus:outline-none focus:border-[#1A1410]/60 transition-colors"
                   style={{ fontFamily: 'Jost', fontWeight: 300, fontSize: '1rem' }}
-                  placeholder="Votre prénom"
+                  placeholder="Your lastname"
                 />
               </div>
 
@@ -112,7 +112,7 @@ export function ContactPage() {
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   className="w-full bg-transparent border-b border-[#1A1410]/20 pb-2 text-[#1A1410] placeholder-[#1A1410]/25 focus:outline-none focus:border-[#1A1410]/60 transition-colors"
                   style={{ fontFamily: 'Jost', fontWeight: 300, fontSize: '1rem' }}
-                  placeholder="Votre email"
+                  placeholder="Your email"
                 />
               </div>
 
@@ -122,7 +122,7 @@ export function ContactPage() {
                   className="block text-[#1A1410]/40 text-xs tracking-[0.15em] mb-3"
                   style={{ fontFamily: 'Jost' }}
                 >
-                  Numéro de téléphone
+                  Phone number
                 </label>
                 <input
                   type="tel"
@@ -130,7 +130,7 @@ export function ContactPage() {
                   onChange={(e) => setForm({ ...form, telephone: e.target.value })}
                   className="w-full bg-transparent border-b border-[#1A1410]/20 pb-2 text-[#1A1410] placeholder-[#1A1410]/25 focus:outline-none focus:border-[#1A1410]/60 transition-colors"
                   style={{ fontFamily: 'Jost', fontWeight: 300, fontSize: '1rem' }}
-                  placeholder="+33656762145"
+                  placeholder="+33656762145 (You have to specify the country code)"
                 />
               </div>
 
@@ -140,7 +140,7 @@ export function ContactPage() {
                   className="block text-[#1A1410]/40 text-xs tracking-[0.15em] mb-3"
                   style={{ fontFamily: 'Jost' }}
                 >
-                  Type d'évènement
+                  Event type
                 </label>
                 <select
                   required
@@ -149,13 +149,13 @@ export function ContactPage() {
                   className="w-full bg-transparent border-b border-[#1A1410]/20 pb-2 text-[#1A1410] focus:outline-none focus:border-[#1A1410]/60 transition-colors appearance-none cursor-pointer"
                   style={{ fontFamily: 'Jost', fontWeight: 300, fontSize: '1rem', color: form.typeEvenement ? '#1A1410' : 'rgba(26,20,16,0.25)' }}
                 >
-                  <option value="" disabled hidden>Sélectionnez un type</option>
+                  <option value="" disabled hidden>Select an event</option>
                   <option value="business">Business</option>
-                  <option value="festival">Festival</option>
-                  <option value="soirée">Soirée</option>
-                  <option value="anniversaire">Anniversaire</option>
-                  <option value="universitaire">Universitaire</option>
-                  <option value="tourisme">Tourisme</option>
+                  <option value="soirée">Party </option>
+                  <option value="festival">Festival </option>
+                  <option value="anniversaire">Birthday </option>
+                  <option value="universitaire">University </option>
+                  <option value="tourisme">Tourism </option>
                 </select>
               </div>
 
@@ -174,7 +174,7 @@ export function ContactPage() {
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   className="w-full bg-transparent border-b border-[#1A1410]/20 pb-2 text-[#1A1410] placeholder-[#1A1410]/25 focus:outline-none focus:border-[#1A1410]/60 transition-colors resize-none"
                   style={{ fontFamily: 'Jost', fontWeight: 300, fontSize: '1rem' }}
-                  placeholder="Décrivez votre projet..."
+                  placeholder="Describe your project..."
                 />
               </div>
 
